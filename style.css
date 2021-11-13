@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+:root{
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%, 80%);
+    --cyan: hsl(169, 55%, 64%);
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    padding: 15px;
+    font-size: 2.5rem;
+    color: var(--black);
+    position: relative;
+}
+
+.title::before{
+    content: '';
+    width: 2px; 
+    height: calc(2.5rem - 2px);
+    background: var(--black);
+    position: absolute;
+    top: 25%;
+    left: 0;
+    border-radius: 0 50px 50px 0;
+}
+
+form{
+    margin: 10px 15px;
+    display: flex;
+}
+
+input[type=text] {
+    padding: 10px;
+    border: 0.5px solid hsl(0, 0%, 0%, 20%);
+    background: hsl(0, 4%, 97%);
+    border-right: none;
+}
+
+input[type=submit] {
+    padding: 10px;
+    border: 0.5px solid hsl(0, 0%, 0%, 20%);
+    color: var(--white);
+    background: var(--cyan);
+    border-left: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.flag-image{
+    margin: 20px 15px;
+    width: 35rem;
+}
+
+.flag-image img{
+    width: 100%;
+}
+
+.tip{
+    font-weight: bold;
+}
+
+p{
+    margin: 15px;
+    padding: 12px;
+    width: 35rem;
+    background: var(--cyan);
+    box-shadow: inset 15px 0 30px hsl(0, 0%, 0%, 20%)
+}
+
+.statistic-container{
+    height: 100vh;
+    width: 30vw;
+    color: var(--white);
+    background: var(--black);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.statistic-container h1{
+    font-size: 3rem;
+}
+
+.refresh-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.refresh-button{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    color: var(--white);
+    background: var(--cyan);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 542px) {
+    body{
+        flex-direction: column;
+    }
+
+    .title{
+        font-size: 2rem;
+    }
+
+    .title::before{
+        height: calc(2rem - 2px);
+    }
+
+    .flag-image,
+    p{
+        width: 25rem
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    body{
+        flex-direction: column;
+    }
+
+    .statistic-container{
+        width: 100vw;
+        height: max-content;
+    }
+
+    .statistic-container div{
+        margin: 20px;
+    }
+}
